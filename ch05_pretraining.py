@@ -104,3 +104,8 @@ print(loss)
 # %% PERPLEXITY
 # perplexity measures how well the probabilty distribution predicted by the model matches
 # the actual distribution of the words in the dataset.
+
+perplexity = torch.exp(loss)
+print(perplexity)
+
+# %%
