@@ -83,8 +83,9 @@ neg_avg_log_probas
 # %%
 
 # %% cross entrypy loss
+print(f"Probas.shape: {probas.shape}")
 print(f"Logits shape: {logits.shape}")
-print(f"Traget shape: {targets.shape}")
+print(f"Target shape: {targets.shape}")
 
 # %%
 logits_flat = logits.flatten(0, 1)
@@ -100,4 +101,6 @@ loss = torch.nn.functional.cross_entropy(
     targets_flat
 )
 print(loss)
-# %%
+# %% PERPLEXITY
+# perplexity measures how well the probabilty distribution predicted by the model matches
+# the actual distribution of the words in the dataset.
