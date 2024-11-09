@@ -223,7 +223,7 @@ print_gradients(model_with_shortcut, sample_input)
 # vanishing gradient problem in deep neural networks.
 
 # %%
-from ch02_attention import MultiHeadAttention
+from ch03_attention import MultiHeadAttention
 
 
 class TransformerBlock(nn.Module):

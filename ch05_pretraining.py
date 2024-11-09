@@ -109,3 +109,24 @@ perplexity = torch.exp(loss)
 print(perplexity)
 
 # %%
+
+file_path = "the-verdict.txt"
+with open(file_path, 'r', encoding='utf-8') as f:
+    text_data = f.read()
+
+# %%
+total_characters = len(text_data)
+total_tokens = len(tokenizer.encode(text_data))
+print(f"Characters: {total_characters}")
+print(f"Tokens: {total_tokens}")
+# %%
+
+# 
+train_ratio = 0.90
+split_idx = int(train_ratio * len(text_data))
+
+train_data = text_data[:split_idx]
+val_data = text_data[split_idx:]
+
+# %%
+from ch0
