@@ -470,7 +470,7 @@ def generate(model, idx, max_new_tokens, context_size, temperature=0., top_k=Non
             probs = torch.softmax(logits, dim=-1)
             idx_next = torch.multinomial(probs, num_samples=1)
         else:
-            idx_next = torch.softmax(logits, dim=-1, keepdim=True)
+            idx_next = torch.softmax(logits, dim=-1)
 
         if idx_next == eos_id:
             break
